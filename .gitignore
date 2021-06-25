@@ -3,3 +3,4 @@
 /vendor
 /composer.lock
 /generate_grpc.sh
+.DS_Store

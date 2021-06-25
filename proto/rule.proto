@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package grpc.config;
+
+import "common.proto";
+
+service Rule {
+  rpc detail (RuleDetailRequest) returns (RuleDetailResponse) {
+  }
+}
+
+message RuleDetail {
+  int32  is_on    = 1;
+  int32  event_id = 2;
+  string value    = 3;
+}
+
+message RuleDetailRequest {
+  int32  business_id = 1;
+  string open_id     = 2;
+  int32  event_id    = 3;
+}
+
+message RuleDetailResponse {
+  grpc.common.Error error  = 1;
+  RuleDetail        detail = 2;
+}
