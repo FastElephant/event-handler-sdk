@@ -1,0 +1,39 @@
+{
+  "name": "fast-elephant/event-handler-sdk",
+  "description": "fast-elephant/event-handler-sdk",
+  "type": "library",
+  "require": {
+    "php": "^7.0",
+    "google/protobuf": "^3.17",
+    "grpc/grpc": "^1.38"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "FastElephant\\EventHandler\\": "src/",
+      "Grpc\\": "Grpc/",
+      "GPBMetadata\\": "GPBMetadata/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FastElephant\\EventHandler\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "monkey",
+      "email": "blaserr93@163.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "FastElephant\\EventHandler\\EventHandlerServiceProvider"
+      ]
+    }
+  }
+}
