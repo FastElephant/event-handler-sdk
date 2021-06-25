@@ -3,6 +3,7 @@
 namespace FastElephant\EventHandler;
 
 use FastElephant\EventHandler\Config\Rule;
+use FastElephant\EventHandler\Event\Handler;
 use FastElephant\EventHandler\Exception\BusinessException;
 use FastElephant\EventHandler\Exception\EventHandlerException;
 use FastElephant\EventHandler\Exception\GrpcRequestException;
@@ -51,7 +52,7 @@ class EventHandler
     }
 
     /**
-     * 获取配置规则实例
+     * 规则实例
      * @return Rule
      */
     public function rule()
@@ -60,20 +61,12 @@ class EventHandler
     }
 
     /**
-     *
-     * @param $param
+     * 事件实例
+     * @return Handler
      */
-    public function event($param)
+    public function event()
     {
-        if ($param === NULL) {
-            throw new Exception\InvalidArgumentException(400, 'param不能为空');
-        }
-        if (is_array($param)) {
-            $param = json_encode($param, JSON_UNESCAPED_UNICODE);
-        }
-        if (is_int($param)) {
-            $param = strval($param);
-        }
+        return new Handler($this);
     }
 
     /**

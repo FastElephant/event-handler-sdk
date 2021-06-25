@@ -10,9 +10,9 @@ use Exception;
 use FastElephant\EventHandler\EventHandler;
 use FastElephant\EventHandler\Exception\GrpcRequestException;
 use Grpc\ChannelCredentials;
+use Grpc\Common\BaseRequest;
 use Grpc\Config\RuleClient;
 use Grpc\Config\RuleDetail;
-use Grpc\Config\RuleDetailRequest;
 
 class Rule
 {
@@ -42,7 +42,7 @@ class Rule
      */
     public function detail()
     {
-        $request = new RuleDetailRequest();
+        $request = new BaseRequest();
         $request->setEventId($this->eventHandler->eventId);
         $request->setBusinessId($this->eventHandler->businessId);
         $request->setOpenId($this->eventHandler->openId);

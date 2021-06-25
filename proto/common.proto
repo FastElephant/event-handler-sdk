@@ -6,3 +6,9 @@ message Error {
   int64  code    = 1;
   string message = 2;
 }
+
+message BaseRequest {
+  int32  business_id = 1;
+  int32  event_id    = 2;
+  string open_id     = 3;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package grpc.event;
+
+import "common.proto";
+
+service Handler {
+  rpc dispatch (DispatchRequest) returns (DispatchResponse) {
+  }
+}
+
+message DispatchRequest {
+  grpc.common.BaseRequest base  = 1;
+  string                  param = 2;
+}
+
+message DispatchResponse {
+  grpc.common.Error error  = 1;
+  string            msg_id = 2;
+}

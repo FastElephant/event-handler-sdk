@@ -1,11 +1,11 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-namespace Grpc\Config;
+namespace Grpc\Event;
 
 /**
  */
-class RuleClient extends \Grpc\BaseStub {
+class HandlerClient extends \Grpc\BaseStub {
 
     /**
      * @param string $hostname hostname
@@ -17,15 +17,15 @@ class RuleClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Grpc\Common\BaseRequest $argument input argument
+     * @param \Grpc\Event\DispatchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      */
-    public function detail(\Grpc\Common\BaseRequest $argument,
+    public function dispatch(\Grpc\Event\DispatchRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/grpc.config.Rule/detail',
+        return $this->_simpleRequest('/grpc.event.Handler/dispatch',
         $argument,
-        ['\Grpc\Config\RuleDetailResponse', 'decode'],
+        ['\Grpc\Event\DispatchResponse', 'decode'],
         $metadata, $options);
     }
 
