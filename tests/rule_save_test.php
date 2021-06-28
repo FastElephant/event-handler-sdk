@@ -7,7 +7,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$e = new \FastElephant\EventHandler\EventHandler(10000010, '123456');
+$e = new \FastElephant\EventHandler\EventHandler(10000100, '123456');
 
 
 $e->rule()->save(1, [['key'=>'222','value'=>'3333']]);
