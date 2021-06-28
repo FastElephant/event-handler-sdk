@@ -72,6 +72,12 @@ class Handler
 
         $this->eventHandler->checkResponse($recv, $status);
 
-        return $recv->getMsgId();
+        $arrMsgId = [];
+
+        foreach ($recv->getMsgId() as $msgId) {
+            array_push($arrMsgId, $msgId);
+        }
+
+        return $arrMsgId;
     }
 }
