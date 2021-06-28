@@ -29,4 +29,17 @@ class RuleClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * @param \Grpc\Config\RuleSaveRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     */
+    public function save(\Grpc\Config\RuleSaveRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/grpc.config.Rule/save',
+        $argument,
+        ['\Grpc\Config\RuleSaveResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

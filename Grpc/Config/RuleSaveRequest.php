@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>grpc.config.RuleDetailResponse</code>
+ * Generated from protobuf message <code>grpc.config.RuleSaveRequest</code>
  */
-class RuleDetailResponse extends \Google\Protobuf\Internal\Message
+class RuleSaveRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.grpc.common.Error error = 1;</code>
+     * Generated from protobuf field <code>.grpc.common.BaseRequest base = 1;</code>
      */
-    protected $error = null;
+    protected $base = null;
     /**
      * Generated from protobuf field <code>.grpc.config.RuleDetail detail = 2;</code>
      */
@@ -28,7 +28,7 @@ class RuleDetailResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Grpc\Common\Error $error
+     *     @type \Grpc\Common\BaseRequest $base
      *     @type \Grpc\Config\RuleDetail $detail
      * }
      */
@@ -38,33 +38,33 @@ class RuleDetailResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.grpc.common.Error error = 1;</code>
-     * @return \Grpc\Common\Error
+     * Generated from protobuf field <code>.grpc.common.BaseRequest base = 1;</code>
+     * @return \Grpc\Common\BaseRequest
      */
-    public function getError()
+    public function getBase()
     {
-        return isset($this->error) ? $this->error : null;
+        return isset($this->base) ? $this->base : null;
     }
 
-    public function hasError()
+    public function hasBase()
     {
-        return isset($this->error);
+        return isset($this->base);
     }
 
-    public function clearError()
+    public function clearBase()
     {
-        unset($this->error);
+        unset($this->base);
     }
 
     /**
-     * Generated from protobuf field <code>.grpc.common.Error error = 1;</code>
-     * @param \Grpc\Common\Error $var
+     * Generated from protobuf field <code>.grpc.common.BaseRequest base = 1;</code>
+     * @param \Grpc\Common\BaseRequest $var
      * @return $this
      */
-    public function setError($var)
+    public function setBase($var)
     {
-        GPBUtil::checkMessage($var, \Grpc\Common\Error::class);
-        $this->error = $var;
+        GPBUtil::checkMessage($var, \Grpc\Common\BaseRequest::class);
+        $this->base = $var;
 
         return $this;
     }

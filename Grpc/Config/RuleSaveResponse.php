@@ -9,18 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>grpc.config.RuleDetailResponse</code>
+ * Generated from protobuf message <code>grpc.config.RuleSaveResponse</code>
  */
-class RuleDetailResponse extends \Google\Protobuf\Internal\Message
+class RuleSaveResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>.grpc.common.Error error = 1;</code>
      */
     protected $error = null;
-    /**
-     * Generated from protobuf field <code>.grpc.config.RuleDetail detail = 2;</code>
-     */
-    protected $detail = null;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class RuleDetailResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grpc\Common\Error $error
-     *     @type \Grpc\Config\RuleDetail $detail
      * }
      */
     public function __construct($data = NULL) {
@@ -65,38 +60,6 @@ class RuleDetailResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Grpc\Common\Error::class);
         $this->error = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.grpc.config.RuleDetail detail = 2;</code>
-     * @return \Grpc\Config\RuleDetail
-     */
-    public function getDetail()
-    {
-        return isset($this->detail) ? $this->detail : null;
-    }
-
-    public function hasDetail()
-    {
-        return isset($this->detail);
-    }
-
-    public function clearDetail()
-    {
-        unset($this->detail);
-    }
-
-    /**
-     * Generated from protobuf field <code>.grpc.config.RuleDetail detail = 2;</code>
-     * @param \Grpc\Config\RuleDetail $var
-     * @return $this
-     */
-    public function setDetail($var)
-    {
-        GPBUtil::checkMessage($var, \Grpc\Config\RuleDetail::class);
-        $this->detail = $var;
 
         return $this;
     }

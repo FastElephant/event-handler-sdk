@@ -18,11 +18,7 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
      */
     protected $is_on = 0;
     /**
-     * Generated from protobuf field <code>int32 event_id = 2;</code>
-     */
-    protected $event_id = 0;
-    /**
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>string value = 2;</code>
      */
     protected $value = '';
 
@@ -33,7 +29,6 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $is_on
-     *     @type int $event_id
      *     @type string $value
      * }
      */
@@ -65,29 +60,7 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int32 event_id = 2;</code>
-     * @return int
-     */
-    public function getEventId()
-    {
-        return $this->event_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 event_id = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setEventId($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->event_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>string value = 2;</code>
      * @return string
      */
     public function getValue()
@@ -96,7 +69,7 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string value = 3;</code>
+     * Generated from protobuf field <code>string value = 2;</code>
      * @param string $var
      * @return $this
      */

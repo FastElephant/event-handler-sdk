@@ -7,16 +7,25 @@ import "common.proto";
 service Rule {
   rpc detail (grpc.common.BaseRequest) returns (RuleDetailResponse) {
   }
+  rpc save (RuleSaveRequest) returns (RuleSaveResponse) {
+  }
 }
 
 message RuleDetail {
-  int32  is_on    = 1;
-  int32  event_id = 2;
-  string value    = 3;
+  int32  is_on = 1;
+  string value = 2;
 }
 
 message RuleDetailResponse {
   grpc.common.Error error  = 1;
   RuleDetail        detail = 2;
-  string            msg_id = 3;
+}
+
+message RuleSaveRequest {
+  grpc.common.BaseRequest base   = 1;
+  RuleDetail              detail = 2;
+}
+
+message RuleSaveResponse {
+  grpc.common.Error error  = 1;
 }
