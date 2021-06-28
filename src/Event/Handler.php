@@ -41,7 +41,7 @@ class Handler
     /**
      * 分发事件
      * @param $param
-     * @return string
+     * @return array
      */
     public function dispatch($param)
     {

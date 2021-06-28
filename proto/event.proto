@@ -16,5 +16,5 @@ message DispatchRequest {
 
 message DispatchResponse {
   grpc.common.Error error  = 1;
-  string            msg_id = 2;
+  repeated string   msg_id = 2;
 }

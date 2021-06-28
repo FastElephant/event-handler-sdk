@@ -45,7 +45,7 @@ class EventHandler
             $this->host = config('event-handler.host');
             $this->businessId = intval(config('event-handler.business_id'));
         } catch (Throwable $e) {
-            $this->host = '127.0.0.1:9503';
+            $this->host = '127.0.0.1:8284';
             $this->businessId = 100;
         }
         $this->eventId = intval($eventId);
