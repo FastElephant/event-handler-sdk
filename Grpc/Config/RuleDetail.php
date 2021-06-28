@@ -18,7 +18,11 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
      */
     protected $is_on = 0;
     /**
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>string value_format = 2;</code>
+     */
+    protected $value_format = '';
+    /**
+     * Generated from protobuf field <code>string value = 3;</code>
      */
     protected $value = '';
 
@@ -29,6 +33,7 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $is_on
+     *     @type string $value_format
      *     @type string $value
      * }
      */
@@ -60,7 +65,29 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>string value_format = 2;</code>
+     * @return string
+     */
+    public function getValueFormat()
+    {
+        return $this->value_format;
+    }
+
+    /**
+     * Generated from protobuf field <code>string value_format = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setValueFormat($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->value_format = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string value = 3;</code>
      * @return string
      */
     public function getValue()
@@ -69,7 +96,7 @@ class RuleDetail extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string value = 2;</code>
+     * Generated from protobuf field <code>string value = 3;</code>
      * @param string $var
      * @return $this
      */

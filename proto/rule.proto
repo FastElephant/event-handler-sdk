@@ -12,8 +12,9 @@ service Rule {
 }
 
 message RuleDetail {
-  int32  is_on = 1;
-  string value = 2;
+  int32  is_on        = 1;
+  string value_format = 2;
+  string value        = 3;
 }
 
 message RuleDetailResponse {
@@ -27,5 +28,5 @@ message RuleSaveRequest {
 }
 
 message RuleSaveResponse {
-  grpc.common.Error error  = 1;
+  grpc.common.Error error = 1;
 }

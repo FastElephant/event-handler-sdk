@@ -7,6 +7,7 @@ use FastElephant\EventHandler\Event\Handler;
 use FastElephant\EventHandler\Exception\BusinessException;
 use FastElephant\EventHandler\Exception\EventHandlerException;
 use FastElephant\EventHandler\Exception\GrpcRequestException;
+use FastElephant\EventHandler\Exception\UnknownException;
 use Throwable;
 
 class EventHandler
@@ -45,7 +46,7 @@ class EventHandler
             $this->businessId = intval(config('event-handler.business_id'));
         } catch (Throwable $e) {
             $this->host = '127.0.0.1:9503';
-            $this->businessId = 200000;
+            $this->businessId = 100;
         }
         $this->eventId = intval($eventId);
         $this->openId = strval($openId);
@@ -83,10 +84,17 @@ class EventHandler
             return;
         }
 
-        if ($exception != NULL) {
-            throw new $exception($recv->getError()->getCode(), $recv->getError()->getMessage());
+        $code = $recv->getError()->getCode() ?? 0;
+        $message = $recv->getError()->getMessage() ?? 'Internal Server Error.';
+
+        if ($code == 0) {
+            throw new UnknownException(500, $message);
         }
 
-        throw new BusinessException($recv->getError()->getCode(), $recv->getError()->getMessage());
+        if ($exception != NULL) {
+            throw new $exception($code, $message);
+        }
+
+        throw new BusinessException($code, $message);
     }
 }
