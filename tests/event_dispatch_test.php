@@ -7,8 +7,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$e = new \FastElephant\EventHandler\EventHandler(1000, '22222222');
+$e = new \FastElephant\EventHandler\EventHandler(10000001, '123456');
 
-print_r($e->event()->dispatch('222222'));
+print_r($e->event()->dispatch(['delivery_id' => 18000111, 'capacity_code' => 1234]));
 
 
