@@ -40,14 +40,15 @@ class Rule
 
     /**
      * 获取规则详情
+     * @param string $openId
      * @return array
      */
-    public function detail()
+    public function detail(string $openId)
     {
         $request = new BaseRequest();
         $request->setEventId($this->eventHandler->eventId);
         $request->setBusinessId($this->eventHandler->businessId);
-        $request->setOpenId($this->eventHandler->openId);
+        $request->setOpenId($openId);
         try {
             list($recv, $status) = $this->client->detail($request)->wait();
         } catch (Exception $e) {
@@ -66,10 +67,11 @@ class Rule
 
     /**
      * 保存规则
+     * @param string $openId
      * @param int $isOn
      * @param $value
      */
-    public function save(int $isOn, $value)
+    public function save(string $openId, int $isOn, $value)
     {
         if ($value === NULL) {
             throw new InvalidArgumentException(400, 'value不能为空');
@@ -84,7 +86,7 @@ class Rule
         $base = new BaseRequest();
         $base->setEventId($this->eventHandler->eventId);
         $base->setBusinessId($this->eventHandler->businessId);
-        $base->setOpenId($this->eventHandler->openId);
+        $base->setOpenId($openId);
 
         $detail = new RuleDetail();
         $detail->setIsOn($isOn);

@@ -58,7 +58,6 @@ class Handler
         $baseRequest = new BaseRequest();
         $baseRequest->setEventId($this->eventHandler->eventId);
         $baseRequest->setBusinessId($this->eventHandler->businessId);
-        $baseRequest->setOpenId($this->eventHandler->openId);
 
         $request = new DispatchRequest();
         $request->setBase($baseRequest);

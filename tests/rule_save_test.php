@@ -7,7 +7,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$e = new \FastElephant\EventHandler\EventHandler(10000100, '123456');
+$e = new \FastElephant\EventHandler\EventHandler(10000100);
 
 
 $rules = [
@@ -17,6 +17,6 @@ $rules = [
     ['capacity_type' => 4, 'gratuity' => 4, 'delay' => 180],
 ];
 
-$e->rule()->save(1, $rules);
+$e->rule()->save('123456', 1, $rules);
 
 

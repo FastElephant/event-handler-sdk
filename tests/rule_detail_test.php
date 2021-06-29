@@ -7,8 +7,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$e = new \FastElephant\EventHandler\EventHandler(10000100, '123456');
+$e = new \FastElephant\EventHandler\EventHandler(10000100);
 
 
-print_r($e->rule()->detail());
+print_r($e->rule()->detail('123456'));
 

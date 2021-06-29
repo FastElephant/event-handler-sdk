@@ -8,10 +8,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 
-$e1 = new \FastElephant\EventHandler\EventHandler();
+/*$e1 = new \FastElephant\EventHandler\EventHandler();
 
-print_r($e1->event()->dispatch(['url' => '', 'body' => [], 'method' => 'post', 'header' => [], 'delay' => 5]));
+print_r($e1->event()->dispatch(['url' => '', 'body' => [], 'method' => 'post', 'header' => [], 'delay' => 5]));*/
 
-$e2 = new \FastElephant\EventHandler\EventHandler(10000010, '123456');
+$e2 = new \FastElephant\EventHandler\EventHandler(10000100);
 
-print_r($e2->event()->dispatch(['delivery_id' => 18000111]));
+$d = [
+    ['delivery_order_id' => 18000111, 'capacity_types' => [1, 4], 'merchant_id' => 123455],
+];
+
+print_r($e2->event()->dispatch($d));

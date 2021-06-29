@@ -29,17 +29,10 @@ class EventHandler
     public $eventId = 0;
 
     /**
-     * 开放id
-     * @var string
-     */
-    public $openId = '';
-
-    /**
      * EventHandler constructor.
      * @param $eventId
-     * @param string $openId
      */
-    public function __construct($eventId = 0, $openId = '')
+    public function __construct($eventId = 0)
     {
         try {
             $this->host = config('event-handler.host');
@@ -49,7 +42,6 @@ class EventHandler
             $this->businessId = 100;
         }
         $this->eventId = intval($eventId);
-        $this->openId = strval($openId);
     }
 
     /**
