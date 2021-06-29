@@ -7,6 +7,12 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$e = new \FastElephant\EventHandler\EventHandler(10000100, '123456');
 
-print_r($e->event()->dispatch(['delivery_id' => 18000111]));
+$e1 = new \FastElephant\EventHandler\EventHandler();
+
+print_r($e1->event()->dispatch(['notify_url' => '', 'request_body' => [], 'delay' => 5]));
+
+
+$e2 = new \FastElephant\EventHandler\EventHandler(10000010, '123456');
+
+print_r($e2->event()->dispatch(['delivery_id' => 18000111]));

@@ -40,7 +40,7 @@ class Rule
 
     /**
      * 获取规则详情
-     * @return RuleDetail
+     * @return array
      */
     public function detail()
     {
@@ -55,7 +55,13 @@ class Rule
         }
 
         $this->eventHandler->checkResponse($recv, $status);
-        return $recv->getDetail();
+
+        $detail = $recv->getDetail();
+
+        return [
+            'is_on' => $detail->getIsOn(),
+            'value' => $this->formatDetailValue($detail->getValue(), $detail->getValueFormat()),
+        ];
     }
 
     /**
@@ -95,5 +101,16 @@ class Rule
         }
 
         $this->eventHandler->checkResponse($recv, $status);
+    }
+
+    /**
+     * @param $value
+     * @param $format
+     * @return mixed
+     */
+    private function formatDetailValue($value, $format)
+    {
+        if ($format == 'json') return json_decode($value, true);
+        return $format == 'int' ? intval($value) : strval($value);
     }
 }

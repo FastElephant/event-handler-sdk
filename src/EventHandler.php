@@ -39,7 +39,7 @@ class EventHandler
      * @param $eventId
      * @param string $openId
      */
-    public function __construct($eventId, $openId = '')
+    public function __construct($eventId = 0, $openId = '')
     {
         try {
             $this->host = config('event-handler.host');
