@@ -6,7 +6,6 @@
 
 namespace FastElephant\EventHandler\Event;
 
-
 use Exception;
 use FastElephant\EventHandler\EventHandler;
 use FastElephant\EventHandler\Exception\GrpcRequestException;
@@ -41,7 +40,6 @@ class Handler
     /**
      * 分发事件
      * @param $param
-     * @return array
      */
     public function dispatch($param)
     {
@@ -70,13 +68,5 @@ class Handler
         }
 
         $this->eventHandler->checkResponse($recv, $status);
-
-        $arrMsgId = [];
-
-        foreach ($recv->getMsgId() as $msgId) {
-            array_push($arrMsgId, $msgId);
-        }
-
-        return $arrMsgId;
     }
 }

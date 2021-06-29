@@ -17,10 +17,6 @@ class DispatchResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.grpc.common.Error error = 1;</code>
      */
     protected $error = null;
-    /**
-     * Generated from protobuf field <code>repeated string msg_id = 2;</code>
-     */
-    private $msg_id;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class DispatchResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Grpc\Common\Error $error
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $msg_id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,28 +60,6 @@ class DispatchResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Grpc\Common\Error::class);
         $this->error = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string msg_id = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
-     */
-    public function getMsgId()
-    {
-        return $this->msg_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated string msg_id = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
-     * @return $this
-     */
-    public function setMsgId($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->msg_id = $arr;
 
         return $this;
     }
