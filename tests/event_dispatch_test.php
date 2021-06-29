@@ -10,8 +10,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $e1 = new \FastElephant\EventHandler\EventHandler();
 
-print_r($e1->event()->dispatch(['notify_url' => '', 'request_body' => [], 'delay' => 5]));
-
+print_r($e1->event()->dispatch(['url' => '', 'body' => [], 'method' => 'post', 'header' => [], 'delay' => 5]));
 
 $e2 = new \FastElephant\EventHandler\EventHandler(10000010, '123456');
 
