@@ -4,3 +4,5 @@
 /composer.lock
 /generate_grpc.sh
 .DS_Store
+/tests/rule_save_test.php
+/tests/event_dispatch_test.php
