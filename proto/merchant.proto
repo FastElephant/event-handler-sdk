@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpc.user;
+
+import "common.proto";
+
+service Merchant {
+  rpc queryBind (QueryBindRequest) returns (QueryBindResponse) {
+  }
+}
+
+message QueryBindRequest {
+  string phone = 1;
+}
+
+message QueryBindResponse {
+  grpc.common.Error error = 1;
+  string            data  = 2;
+}

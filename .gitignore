@@ -7,3 +7,4 @@
 /tests/rule_save_test.php
 /tests/event_dispatch_test.php
 /tests/rule_detail_test.php
+/tests/merchant_sync_auth_test.php

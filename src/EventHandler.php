@@ -8,6 +8,7 @@ use FastElephant\EventHandler\Exception\BusinessException;
 use FastElephant\EventHandler\Exception\EventHandlerException;
 use FastElephant\EventHandler\Exception\GrpcRequestException;
 use FastElephant\EventHandler\Exception\UnknownException;
+use FastElephant\EventHandler\User\Merchant;
 use Throwable;
 
 class EventHandler
@@ -60,6 +61,15 @@ class EventHandler
     public function event()
     {
         return new Handler($this);
+    }
+
+    /**
+     * 商户实例
+     * @return Merchant
+     */
+    public function merchant()
+    {
+        return new Merchant($this);
     }
 
     /**
