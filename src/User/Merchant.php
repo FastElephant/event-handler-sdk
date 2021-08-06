@@ -47,6 +47,8 @@ class Merchant
             list($recv, $status) = $this->client->queryBind($request)->wait();
         } catch (\Exception $e) {
             throw new GrpcRequestException($e->getCode(), $e->getMessage());
+        } finally {
+            $this->client->close();
         }
 
         $this->eventHandler->checkResponse($recv, $status);

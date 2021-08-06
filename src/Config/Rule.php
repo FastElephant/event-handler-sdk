@@ -53,6 +53,8 @@ class Rule
             list($recv, $status) = $this->client->detail($request)->wait();
         } catch (Exception $e) {
             throw new GrpcRequestException($e->getCode(), $e->getMessage());
+        } finally {
+            $this->client->close();
         }
 
         $this->eventHandler->checkResponse($recv, $status);
