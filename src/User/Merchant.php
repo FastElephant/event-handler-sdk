@@ -32,7 +32,7 @@ class Merchant
     public function __construct(EventHandler $eventHandler)
     {
         $this->eventHandler = $eventHandler;
-        $this->client = new MerchantClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure()]);
+        $this->client = new MerchantClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure(), 'timeout' => 8000]);
     }
 
     /**

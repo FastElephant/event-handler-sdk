@@ -34,7 +34,7 @@ class Handler
     public function __construct(EventHandler $eventHandler)
     {
         $this->eventHandler = $eventHandler;
-        $this->client = new HandlerClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure()]);
+        $this->client = new HandlerClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure(), 'timeout' => 100]);
     }
 
     /**

@@ -35,7 +35,7 @@ class Rule
     public function __construct(EventHandler $eventHandler)
     {
         $this->eventHandler = $eventHandler;
-        $this->client = new RuleClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure()]);
+        $this->client = new RuleClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure(), 'timeout' => 8000]);
     }
 
     /**
