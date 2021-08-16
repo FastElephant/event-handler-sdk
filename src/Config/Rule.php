@@ -35,7 +35,12 @@ class Rule
     public function __construct(EventHandler $eventHandler)
     {
         $this->eventHandler = $eventHandler;
-        $this->client = new RuleClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure(), 'timeout' => 8000]);
+        $option = [
+            'credentials' => ChannelCredentials::createInsecure(),
+            'timeout' => 8000,
+            'grpc_target_persist_bound' => 0
+        ];
+        $this->client = new RuleClient($this->eventHandler->host, $option);
     }
 
     /**

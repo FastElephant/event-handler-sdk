@@ -34,7 +34,12 @@ class Handler
     public function __construct(EventHandler $eventHandler)
     {
         $this->eventHandler = $eventHandler;
-        $this->client = new HandlerClient($this->eventHandler->host, ['credentials' => ChannelCredentials::createInsecure(), 'timeout' => 100]);
+        $option = [
+            'credentials' => ChannelCredentials::createInsecure(),
+            'timeout' => 100,
+            'grpc_target_persist_bound' => 0
+        ];
+        $this->client = new HandlerClient($this->eventHandler->host, $option);
     }
 
     /**
