@@ -7,6 +7,7 @@ use FastElephant\EventHandler\Event\Handler;
 use FastElephant\EventHandler\Exception\BusinessException;
 use FastElephant\EventHandler\Exception\EventHandlerException;
 use FastElephant\EventHandler\Exception\GrpcRequestException;
+use FastElephant\EventHandler\Exception\InvalidArgumentException;
 use FastElephant\EventHandler\Exception\UnknownException;
 use FastElephant\EventHandler\User\Merchant;
 use Throwable;
@@ -39,8 +40,11 @@ class EventHandler
             $this->host = config('event-handler.host');
             $this->businessId = intval(config('event-handler.business_id'));
         } catch (Throwable $e) {
-            $this->host = '127.0.0.1:8284';
-            $this->businessId = 100;
+            $this->host = '';
+            $this->businessId = 0;
+        }
+        if (!$this->host) {
+            throw new InvalidArgumentException(500, 'event-handler.host undefined');
         }
         $this->eventId = intval($eventId);
     }
